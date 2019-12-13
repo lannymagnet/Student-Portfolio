@@ -65,19 +65,6 @@ $header: #5371e1;
 $detail: #b2b2b2;
 $highlight: #5371e1;
 $text: #ffffff;
-body {
-    background: black;
-    letter-spacing: 2px;
-    font-family: "Lato", Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    line-height: 1.5;
-    color: white;
-}
-
 .skills {
     max-width: 50%;
     margin: 40px auto;
@@ -119,7 +106,6 @@ body {
 body {
     background: black;
     letter-spacing: 2px;
-    font-family: "Lato", Arial, Helvetica, sans-serif;
     font-size: 16px;
     padding: 0;
     margin: 0;
@@ -127,16 +113,8 @@ body {
     width: 100%;
     line-height: 1.5;
     color: white;
-}
-
-body {
     @include background;
-    background: $primary-color;
-    color: #fff;
-    height: 100vh;
-    margin: 0;
     font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
 }
 
 //Headings
@@ -252,6 +230,30 @@ main {
     &:hover {
         background-color: $secondary-color;
         color: set-text-color($secondary-color);
+    }
+}
+
+//Contact Page
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    div {
+        font-size: 2rem;
+        border: 3px #fff solid;
+        padding: 1.5rem 5.5rem;
+        margin-bottom: 3rem;
+        @include easeOut;
+        &:hover {
+            padding: 0.5rem 1.5rem;
+            background: $secondary-color;
+            color: black;
+            span {
+                color: black;
+            }
+        }
     }
 }
 

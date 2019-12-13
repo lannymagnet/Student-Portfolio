@@ -136,18 +136,6 @@ body {
   .skills i {
     font-size: 7px; }
 
-body {
-  background: black;
-  letter-spacing: 2px;
-  font-family: "Lato", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  line-height: 1.5;
-  color: white; }
-
 .skills {
   max-width: 50%;
   margin: 40px auto;
@@ -183,22 +171,14 @@ body {
 body {
   background: black;
   letter-spacing: 2px;
-  font-family: "Lato", Arial, Helvetica, sans-serif;
   font-size: 16px;
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
   line-height: 1.5;
-  color: white; }
-
-body {
-  background: #444;
-  color: #fff;
-  height: 100vh;
-  margin: 0;
-  font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5; }
+  color: white;
+  font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
   body#bg-img {
     background: url(../img/background.jpg);
     background-attachment: fixed;
@@ -304,6 +284,25 @@ main {
   .btn:hover, .btn-dark:hover, .btn-light:hover {
     background-color: #eece1a;
     color: set-text-color(#eece1a); }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 5.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #eece1a;
+      color: black; }
+      .boxes div:hover span {
+        color: black; }
 
 .btn-dark {
   background: black;
