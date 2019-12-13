@@ -1,75 +1,278 @@
 @import "config";
 @import "menu";
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+$title: #24bba0;
+$header: #5371e1;
+$detail: #b2b2b2;
+$highlight: #5371e1;
+$text: #ffffff;
+body {
+    background: black;
+    letter-spacing: 2px;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+    color: white;
+}
+
+.skills {
+    max-width: 50%;
+    margin: 40px auto;
+    text-align: center;
+    .hr-text {
+        font-size: 20px;
+        position: relative;
+        border: 0;
+        height: 1.5em;
+        &:before {
+            content: "";
+            background: linear-gradient(to right, transparent, $detail, transparent);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+        }
+        &:after {
+            content: attr(data-content);
+            position: relative;
+            display: inline-block;
+            color: black;
+            padding: 0 0.5em;
+            line-height: 1.5em;
+            color: $title;
+            background-color: black;
+        }
+    }
+    li {
+        display: inline-block;
+        font-size: 14px;
+    }
+    i {
+        font-size: 7px;
+    }
+}
+
+$title: #24bba0;
+$header: #5371e1;
+$detail: #b2b2b2;
+$highlight: #5371e1;
+$text: #ffffff;
+body {
+    background: black;
+    letter-spacing: 2px;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+    color: white;
+}
+
+.skills {
+    max-width: 50%;
+    margin: 40px auto;
+    text-align: center;
+    .hr-text {
+        font-size: 20px;
+        position: relative;
+        border: 0;
+        height: 1.5em;
+        &:before {
+            content: "";
+            background: linear-gradient(to right, transparent, $detail, transparent);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+        }
+        &:after {
+            content: attr(data-content);
+            position: relative;
+            display: inline-block;
+            color: black;
+            padding: 0 0.5em;
+            line-height: 1.5em;
+            color: $title;
+            background-color: black;
+        }
+    }
+    li {
+        display: inline-block;
+        font-size: 14px;
+    }
+    i {
+        font-size: 7px;
+    }
 }
 
 body {
-  @include background;
-  background: $primary-color;
-  color: #fff;
-  height: 100%;
-  margin: 0;
-  font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5;
+    background: black;
+    letter-spacing: 2px;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+    color: white;
+}
+
+body {
+    @include background;
+    background: $primary-color;
+    color: #fff;
+    height: 100vh;
+    margin: 0;
+    font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
 }
 
 //Headings
-
 h1,
 h2,
 h3 {
-  margin: 0;
-  font-weight: 400;
-
-  &.lg-heading {
-    font-size: 6rem;
-  }
-
-  &.sm-heading {
-    margin-bottom: 2rem;
-    margin-right: 62.9rem;
-    padding: 0.2rem 1rem;
-    background: rgba(lighten($heading-color, 2), 0.5);
-  }
+    margin: 0;
+    font-weight: 400;
+    &.lg-heading {
+        font-size: 10rem;
+    }
+    &.sm-heading {
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+        text-align: center;
+        background: rgba(#dcdcdc, 0.4);
+    }
 }
 
 a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
 header {
-  position: fixed;
-  z-index: 2;
-  width: 100%;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
 }
 
 .text-secondary {
-  color: $secondary-color;
+    color: darken(#bfff00, 10);
 }
 
 main {
-  padding: 4rem;
-  height: 100%;
-
-  .icons {
-    margin-top: 1rem;
-
-    a {
-      padding: 0.4rem;
-
-      &:hover {
-        color: $secondary-color;
-        @include easeOut();
-      }
+    padding: 4rem;
+    //height: 100%;
+    min-height: calc(100vh-60px);
+    .icons {
+        margin-top: 1rem;
+        a {
+            padding: 0.4rem;
+            &:hover {
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
     }
-  }
-  &#home {
-    overflow: hidden;
-    h1 {
-      margin-top: 20vh;
+    &#home {
+        overflow: hidden;
+        h1 {
+            margin-top: 20vh;
+        }
     }
-  }
 }
+
+.about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+    grid-template-columns: repeat(3, 1fr);
+    .bio-image {
+        grid-area: bioimage;
+        margin: auto;
+        border-radius: 50%;
+        border: $secondary-color 3px solid;
+        height: 200px;
+        width: 200px;
+    }
+    .bio {
+        grid-area: bio;
+        font-size: 1.5 rem;
+    }
+    .job-1 {
+        grid-area: job1;
+    }
+    .job-2 {
+        grid-area: job3;
+    }
+    .job-3 {
+        grid-area: job2;
+    }
+    .job {
+        background: lighten($primary-color, 5);
+        padding: 0.5rem;
+        border-bottom-color: #90ee90 5px soid;
+        margin-bottom: 20px;
+    }
+}
+
+//Work/Projects
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.7 rem;
+    img {
+        width: 100%;
+        border: 3px #ffffff solid;
+        &:hover {
+            opacity: 0.5;
+            border-color: $secondary-color;
+            @include easeOut;
+        }
+    }
+}
+
+//Button Styles
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3 rem;
+    &:hover {
+        background-color: $secondary-color;
+        color: set-text-color($secondary-color);
+    }
+}
+
+.btn-dark {
+    @extend .btn;
+    background: darken($primary-color, 50);
+    color: #fff;
+}
+
+.btn-light {
+    @extend .btn;
+    background: lighten($primary-color, 50);
+    color: #333;
+}
+
+#main-footer {
+    text-align: center;
+    padding: 1rem;
+    background: #ffffff;
+    color: #000000;
+    height: 60px;
+}
+
+@import "mobile";
