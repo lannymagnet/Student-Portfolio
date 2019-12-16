@@ -9,6 +9,7 @@
   "author": "Bharat Dave",
   "license": "MIT",
   "dependencies": {
+    "fullpage.js": "^3.0.8",
     "node-sass": "^4.13.0"
   }
 }

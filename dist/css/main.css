@@ -1,3 +1,5 @@
+@charset "UTF-8";
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -104,69 +106,35 @@ body {
   line-height: 1.5;
   color: white; }
 
-.skills {
-  max-width: 50%;
-  margin: 40px auto;
-  text-align: center; }
-  .skills .hr-text {
-    font-size: 20px;
+.skills .hr-text {
+  font-size: 20px;
+  position: relative;
+  border: 0;
+  height: 1.5em; }
+  .skills .hr-text:before {
+    content: "";
+    background: linear-gradient(to right, transparent, #b2b2b2, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px; }
+  .skills .hr-text:after {
+    content: attr(data-content);
     position: relative;
-    border: 0;
-    height: 1.5em; }
-    .skills .hr-text:before {
-      content: "";
-      background: linear-gradient(to right, transparent, #b2b2b2, transparent);
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      height: 1px; }
-    .skills .hr-text:after {
-      content: attr(data-content);
-      position: relative;
-      display: inline-block;
-      color: black;
-      padding: 0 0.5em;
-      line-height: 1.5em;
-      color: #24bba0;
-      background-color: black; }
-  .skills li {
     display: inline-block;
-    font-size: 14px; }
-  .skills i {
-    font-size: 7px; }
+    color: black;
+    padding: 0 0.5em;
+    line-height: 1.5em;
+    color: #24bba0;
+    background-color: black; }
 
-.skills {
-  max-width: 50%;
-  margin: 40px auto;
-  text-align: center; }
-  .skills .hr-text {
-    font-size: 20px;
-    position: relative;
-    border: 0;
-    height: 1.5em; }
-    .skills .hr-text:before {
-      content: "";
-      background: linear-gradient(to right, transparent, #b2b2b2, transparent);
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      height: 1px; }
-    .skills .hr-text:after {
-      content: attr(data-content);
-      position: relative;
-      display: inline-block;
-      color: black;
-      padding: 0 0.5em;
-      line-height: 1.5em;
-      color: #24bba0;
-      background-color: black; }
-  .skills li {
-    display: inline-block;
-    font-size: 14px; }
-  .skills i {
-    font-size: 7px; }
+.skills li {
+  display: inline-block;
+  font-size: 14px; }
+
+.skills i {
+  font-size: 7px; }
 
 body {
   background: black;
@@ -230,7 +198,7 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #eece1a;
+        color: burlywood;
         transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
@@ -305,11 +273,11 @@ main {
         color: black; }
 
 .btn-dark {
-  background: black;
+  background: gray;
   color: #fff; }
 
 .btn-light {
-  background: #c4c4c4;
+  background: white;
   color: #333; }
 
 #main-footer {
@@ -318,6 +286,37 @@ main {
   background: #ffffff;
   color: #000000;
   height: 60px; }
+
+.top-panel::before {
+  content: "╲╱";
+  color: #ffffff;
+  position: absolute;
+  opacity: 0.8;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  width: 6rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  top: 29vh;
+  bottom: 2rem;
+  margin-left: -3rem;
+  left: 50%;
+  animation: bounce 5.5s ease infinite; }
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-50%); }
+  100% {
+    transform: translateY(0); } }
+
+.top-panel {
+  width: 100%;
+  height: 100vh;
+  background: #111;
+  position: relative; }
+
+i {
+  font-family: fontawesome !important; }
 
 @media screen and (min-width: 1171px) {
   .projects {
