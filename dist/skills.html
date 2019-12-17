@@ -7,15 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/ad594679d5.js" crossorigin="anonymous"></script>
     <title>Skills</title>
-    <link rel="stylesheet" href="style.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="js/fullpage.js"></script>
     <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.trzinka.si/css/Glava.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.trzinka.si/css/Okvir.css" />
     <style>
         body {
             color: white;
+            background: grey;
+            display: flexbox;
         }
         
         .menu .nav-item.current>a {
@@ -28,10 +27,11 @@
             margin-top: 5rem;
         }
         
-        @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
         .okvir {
             position: absolute;
             display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
             width: 100vw;
             height: 88vh;
             top: 6vh;
@@ -52,7 +52,6 @@
             align-items: center;
             text-align: center;
             overflow: hidden;
-            background: linear-gradient(0deg, #1b1b1b, #222, #1b1b1b);
             border-radius: 4px;
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
@@ -63,6 +62,22 @@
             -moz-transition: 0.5s;
             -ms-transition: 0.5s;
             -o-transition: 0.5s;
+        }
+        
+        .card1 {
+            background: linear-gradient(0deg, white, #ff4000, darkred);
+        }
+        
+        .card2 {
+            background: linear-gradient(0deg, white, skyblue, blue);
+        }
+        
+        .card3 {
+            background: linear-gradient(0deg, white, yellow, green);
+        }
+        
+        .card4 {
+            background: linear-gradient(0deg, white, violet, purple);
         }
         
         .okvir .card:hover {
@@ -80,7 +95,7 @@
             width: 55%;
             height: 100%;
             top: 0;
-            left: -62.5px;
+            left: 50%;
             background: rgba(255, 255, 255, 0.03);
             pointer-events: none;
             z-index: 1;
@@ -122,7 +137,7 @@
         }
         
         .percent .number h2 {
-            color: #777;
+            color: #fff;
             font-weight: 700;
             font-size: 40px;
             transition: 0.5s;
@@ -130,11 +145,6 @@
             -moz-transition: 0.5s;
             -ms-transition: 0.5s;
             -o-transition: 0.5s;
-        }
-        
-        .card:hover .percent .number h2 {
-            color: #fff;
-            font-size: 50px;
         }
         
         .percent .number h2 span {
@@ -145,10 +155,6 @@
             -moz-transition: 0.5s;
             -ms-transition: 0.5s;
             -o-transition: 0.5s;
-        }
-        
-        .card:hover .percent .number h2 span {
-            color: #fff;
         }
         
         .text {
@@ -164,10 +170,6 @@
             -moz-transition: 0.5s;
             -ms-transition: 0.5s;
             -o-transition: 0.5s;
-        }
-        
-        .card:hover .text {
-            color: #fff;
         }
         
         svg {
@@ -201,26 +203,116 @@
             stroke-dasharray: 440;
             stroke-dashoffset: 440;
         }
+        /* Percentage for Part 1*/
         
-        .card:nth-child(1) svg circle:nth-child(2) {
+        .card1:nth-child(1) svg circle:nth-child(2) {
             stroke-dashoffset: calc(440 - (400 * 91) / 100);
             stroke: #00ff43;
             animation: progress 1s ease-out forwards;
             -webkit-animation: progress 3s ease-out forwards;
         }
         
-        .card:nth-child(2) svg circle:nth-child(2) {
+        .card1:nth-child(2) svg circle:nth-child(2) {
             stroke-dashoffset: calc(440 - (400 * 67) / 100);
             stroke: #00a1ff;
             animation: progress 1s ease-out forwards;
             -webkit-animation: progress 2s ease-out forwards;
         }
         
-        .card:nth-child(3) svg circle:nth-child(2) {
+        .card1:nth-child(3) svg circle:nth-child(2) {
             stroke-dashoffset: calc(440 - (400 * 18) / 100);
+            stroke: magenta;
+            animation: progress 1s ease-out forwards;
+            -webkit-animation: progress 5s ease-out forwards;
+        }
+        /* Percentage for Part 2*/
+        
+        .card2:nth-child(1) svg circle:nth-child(2) {
+            stroke-dashoffset: calc(440 - (400 * 90) / 100);
+            stroke: #00ff43;
+            animation: progress 1s ease-out forwards;
+            -webkit-animation: progress 3s ease-out forwards;
+        }
+        
+        .card2:nth-child(2) svg circle:nth-child(2) {
+            stroke-dashoffset: calc(440 - (400 * 90) / 100);
+            stroke: #ff5e00;
+            animation: progress 1s ease-out forwards;
+            -webkit-animation: progress 2s ease-out forwards;
+        }
+        
+        .card2:nth-child(3) svg circle:nth-child(2) {
+            stroke-dashoffset: calc(440 - (400 * 50) / 100);
             stroke: #ff04f7;
             animation: progress 1s ease-out forwards;
             -webkit-animation: progress 5s ease-out forwards;
+        }
+        
+        .card2:nth-child(4) svg circle:nth-child(2) {
+            stroke-dashoffset: calc(440 - (400 * 80) / 100);
+            stroke: #ffbf00;
+            animation: progress 1s ease-out forwards;
+            -webkit-animation: progress 5s ease-out forwards;
+        }
+        /* Percentage for Part 3*/
+        
+        .card3:nth-child(1) svg circle:nth-child(2) {
+            stroke-dashoffset: calc(440 - (400 * 85) / 100);
+            stroke: #ff003d;
+            animation: progress 1s ease-out forwards;
+            -webkit-animation: progress 3s ease-out forwards;
+        }
+        
+        .card3:nth-child(2) svg circle:nth-child(2) {
+            stroke-dashoffset: calc(440 - (400 * 95) / 100);
+            stroke: #00a1ff;
+            animation: progress 1s ease-out forwards;
+            -webkit-animation: progress 2s ease-out forwards;
+        }
+        
+        .card3:nth-child(3) svg circle:nth-child(2) {
+            stroke-dashoffset: calc(440 - (400 * 95) / 100);
+            stroke: #ff04f7;
+            animation: progress 1s ease-out forwards;
+            -webkit-animation: progress 2s ease-out forwards;
+        }
+        /* Percentage for Part 4*/
+        
+        .card4:nth-child(1) svg circle:nth-child(2) {
+            stroke-dashoffset: calc(440 - (400 * 100) / 100);
+            stroke: #00ff43;
+            animation: progress 1s ease-out forwards;
+            -webkit-animation: progress 3s ease-out forwards;
+        }
+        
+        .card4:nth-child(2) svg circle:nth-child(2) {
+            stroke-dashoffset: calc(440 - (400 * 90) / 100);
+            stroke: #00a1ff;
+            animation: progress 1s ease-out forwards;
+            -webkit-animation: progress 2s ease-out forwards;
+        }
+        
+        .card4:nth-child(3) svg circle:nth-child(2) {
+            stroke-dashoffset: calc(440 - (400 * 75) / 100);
+            stroke: #ff003d;
+            animation: progress 1s ease-out forwards;
+            -webkit-animation: progress 5s ease-out forwards;
+        }
+        
+        .card4:nth-child(4) svg circle:nth-child(2) {
+            stroke-dashoffset: calc(440 - (400 * 10) / 100);
+            stroke: #ffbf00;
+            animation: progress 1s ease-out forwards;
+            -webkit-animation: progress 5s ease-out forwards;
+        }
+        
+        .title {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            padding: 10px;
+            height: 100%;
+            text-align: center;
+            justify-content: center;
         }
         
         @keyframes progress {
@@ -246,114 +338,296 @@
             <ul class="menu-nav">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">
-                            Home
-                        </a>
+              Home
+            </a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-link">
-                            About Me
-                        </a>
+              About Me
+            </a>
                 </li>
                 <li class="nav-item">
-                    <a href="certificate.html" class="nav-link">Certificates
-                            And Accomplishments
-                        </a>
+                    <a href="certificate.html" class="nav-link">Certificates And Accomplishments
+            </a>
                 </li>
                 <li class="nav-item current">
                     <a href="skills.html" class="nav-link">Skills </a>
                 </li>
                 <li class="nav-item">
                     <a href="work.html" class="nav-link">
-                            My Work
-                        </a>
+              My Work
+            </a>
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">
-                            How To Reach Me
-                        </a>
+              How To Reach Me
+            </a>
                 </li>
             </ul>
         </nav>
     </header>
-    <div>
+    <main>
         <div id="wrapper">
-            <center>Web Designing</center>
-            <div class="section">
-                <div class="okvir">
-                    <div class="card">
-                        <div class="box">
-                            <div class="percent">
+            <div class=" section ">
+                <div class="title">
+                    <center>
+                        <h1>Web Designing</h1>
+                    </center>
+                </div>
+                <div class=" okvir ">
+                    <div class="card1 card">
+                        <div class="box ">
+                            <div class="percent ">
                                 <svg>
-                                        <circle cx="70" cy="70" r="70"></circle>
-                                        <circle cx="70" cy="70" r="70"></circle>
-                                    </svg>
-                                <div class="number">
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                  </svg>
+                                <div class="number ">
                                     <h2>91<span>%</span></h2>
                                 </div>
                             </div>
-                            <h2 class="text">Html</h2>
+                            <h2 class="text ">Html</h2>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="box">
-                            <div class="percent">
+                    <div class="card1 card">
+                        <div class="box ">
+                            <div class="percent ">
                                 <svg>
-                                        <circle cx="70" cy="70" r="70"></circle>
-                                        <circle cx="70" cy="70" r="70"></circle>
-                                    </svg>
-                                <div class="number">
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                  </svg>
+                                <div class="number ">
                                     <h2>67<span>%</span></h2>
                                 </div>
                             </div>
-                            <h2 class="text">CSS</h2>
+                            <h2 class="text ">CSS</h2>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="box">
-                            <div class="percent">
+                    <div class="card1 card">
+                        <div class="box ">
+                            <div class="percent ">
                                 <svg>
-                                        <circle cx="70" cy="70" r="70"></circle>
-                                        <circle cx="70" cy="70" r="70"></circle>
-                                    </svg>
-                                <div class="number">
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                  </svg>
+                                <div class="number ">
                                     <h2>18<span>%</span></h2>
                                 </div>
                             </div>
-                            <h2 class="text">JavaScript</h2>
+                            <h2 class="text ">JavaScript</h2>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!--End of Section 1  -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <center>
+                <h1 class="skills-text"> Programming Languages</h1>
+            </center>
+            <div class=" section ">
 
-            <div class="section">
-                Section 2
+                <div class=" okvir ">
+                    <div class="card2 card ">
+                        <div class="box ">
+                            <div class="percent ">
+                                <svg>
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                  </svg>
+                                <div class="number ">
+                                    <h2>90<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="text ">C</h2>
+                        </div>
+                    </div>
+                    <div class="card2 card">
+                        <div class="box ">
+                            <div class="percent ">
+                                <svg>
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                  </svg>
+                                <div class="number ">
+                                    <h2>90<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="text ">C++</h2>
+                        </div>
+                    </div>
+                    <div class="card2 card ">
+                        <div class="box ">
+                            <div class="percent ">
+                                <svg>
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                    <circle cx="70 " cy="70 " r="70 "></circle>
+                  </svg>
+                                <div class="number ">
+                                    <h2>50<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="text ">Java</h2>
+                        </div>
+                    </div>
+                    <div class="card2 card ">
+                        <div class="box ">
+                            <div class="percent ">
+                                <svg>
+                        <circle cx="70 " cy="70 " r="70 "></circle>
+                        <circle cx="70 " cy="70 " r="70 "></circle>
+                      </svg>
+                                <div class="number ">
+                                    <h2>80<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="text ">Python</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-
             <!--End of Section 2  -->
-
-            <div class="section">
-                Section 3
+            <br>
+            <br>
+            <br>
+            <br>
+            <center>
+                <h1> D.B.M>S, D.S And Content Writing</h1>
+            </center>
+            <div class=" section ">
+                <div class=" okvir ">
+                    <div class="card3 card ">
+                        <div class="box ">
+                            <div class="percent ">
+                                <svg>
+                        <circle cx="70 " cy="70 " r="70 "></circle>
+                        <circle cx="70 " cy="70 " r="70 "></circle>
+                      </svg>
+                                <div class="number ">
+                                    <h2>85<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="text ">D.B.M.S</h2>
+                        </div>
+                    </div>
+                    <div class="card3 card ">
+                        <div class="box ">
+                            <div class="percent ">
+                                <svg>
+                            <circle cx="70 " cy="70 " r="70 "></circle>
+                            <circle cx="70 " cy="70 " r="70 "></circle>
+                          </svg>
+                                <div class="number ">
+                                    <h2>35<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="text ">Data Structure</D>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="card3 card">
+                        <div class="box ">
+                            <div class="percent ">
+                                <svg>
+                        <circle cx="70 " cy="70 " r="70 "></circle>
+                        <circle cx="70 " cy="70 " r="70 "></circle>
+                      </svg>
+                                <div class="number ">
+                                    <h2>95<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="text ">Content<br> Writing</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!--End of Section 3  -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <center>
+                <h1> Language Proficiency</h1>
+            </center>
+            <div class=" section ">
 
-            <div class="section">
-                Section 4
+                <div class=" okvir ">
+                    <div class="card4 card ">
+                        <div class="box ">
+                            <div class="percent ">
+                                <svg>
+                            <circle cx="70 " cy="70 " r="70 "></circle>
+                            <circle cx="70 " cy="70 " r="70 "></circle>
+                          </svg>
+                                <div class="number ">
+                                    <h2>100<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="text ">English</h2>
+                        </div>
+                    </div>
+                    <div class="card4 card ">
+                        <div class="box ">
+                            <div class="percent ">
+                                <svg>
+                                <circle cx="70 " cy="70 " r="70 "></circle>
+                                <circle cx="70 " cy="70 " r="70 "></circle>
+                              </svg>
+                                <div class="number ">
+                                    <h2>90<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="text ">Hindi</D>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="card4 card">
+                        <div class="box ">
+                            <div class="percent ">
+                                <svg>
+                            <circle cx="70 " cy="70 " r="70 "></circle>
+                            <circle cx="70 " cy="70 " r="70 "></circle>
+                          </svg>
+                                <div class="number ">
+                                    <h2>75<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="text ">Marathi</h2>
+                        </div>
+                    </div>
+                    <div class="card4 card ">
+                        <div class="box ">
+                            <div class="percent ">
+                                <svg>
+                                    <circle cx="70 " cy="70 " r="70 "></circle>
+                                    <circle cx="70 " cy="70 " r="70 "></circle>
+                                  </svg>
+                                <div class="number ">
+                                    <h2>10<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="text ">French</D>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <script>
             $(document).ready(function() {
-                $("#wrapper").fullpage();
+                $("#wrapper ").fullpage();
             });
         </script>
-    </div>
-    <footer id="main-footer">
+    </main>
+    <footer id="main-footer ">
         Copyright &copy; 2019
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js "></script>
 </body>
 
 </html>
