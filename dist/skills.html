@@ -10,318 +10,312 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="js/fullpage.js"></script>
     <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <style>
         body {
-            color: white;
-            background: grey;
-            display: flexbox;
-        }
-        
-        .menu .nav-item.current>a {
-            color: #000000;
-        }
-        
-        .Title {
-            font-size: 5rem;
-            text-align: center;
-            margin-top: 5rem;
-        }
-        
-        .okvir {
-            position: absolute;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            width: 100vw;
-            height: 88vh;
-            top: 6vh;
-            justify-content: space-around;
-            align-items: center;
-            background: #101010;
-            font-family: "Roboto", sans-serif;
-            overflow: hidden;
-            z-index: -100;
-        }
-        
-        .okvir .card {
-            position: relative;
-            display: flex;
-            width: 250px;
-            height: 300px;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden;
-            border-radius: 4px;
-            -webkit-border-radius: 4px;
-            -moz-border-radius: 4px;
-            -ms-border-radius: 4px;
-            -o-border-radius: 4px;
-            transition: 0.5s;
-            -webkit-transition: 0.5s;
-            -moz-transition: 0.5s;
-            -ms-transition: 0.5s;
-            -o-transition: 0.5s;
-        }
-        
-        .card1 {
-            background: linear-gradient(0deg, white, #ff4000, darkred);
-        }
-        
-        .card2 {
-            background: linear-gradient(0deg, white, skyblue, blue);
-        }
-        
-        .card3 {
-            background: linear-gradient(0deg, white, yellow, green);
-        }
-        
-        .card4 {
-            background: linear-gradient(0deg, white, violet, purple);
-        }
-        
-        .okvir .card:hover {
-            transform: translateY(-20px);
-            -webkit-transform: translateY(-20px);
-            -moz-transform: translateY(-20px);
-            -ms-transform: translateY(-20px);
-            -o-transform: translateY(-20px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-        }
-        
-        .okvir .card::before {
-            content: "";
-            position: relative;
-            width: 55%;
-            height: 100%;
-            top: 0;
-            left: 50%;
-            background: rgba(255, 255, 255, 0.03);
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .box {
-            position: absolute;
-            z-index: 99;
-        }
-        
-        .percent {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            -ms-border-radius: 50%;
-            -o-border-radius: 50%;
-            box-shadow: inset 0 0 50px #000;
-            background: #222;
-            z-index: 1000;
-        }
-        
-        .percent .number {
-            position: absolute;
-            display: flex;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            -ms-border-radius: 50%;
-            -o-border-radius: 50%;
-        }
-        
-        .percent .number h2 {
-            color: #fff;
-            font-weight: 700;
-            font-size: 40px;
-            transition: 0.5s;
-            -webkit-transition: 0.5s;
-            -moz-transition: 0.5s;
-            -ms-transition: 0.5s;
-            -o-transition: 0.5s;
-        }
-        
-        .percent .number h2 span {
-            font-size: 24px;
-            color: #777;
-            transition: 0.5s;
-            -webkit-transition: 0.5s;
-            -moz-transition: 0.5s;
-            -ms-transition: 0.5s;
-            -o-transition: 0.5s;
-        }
-        
-        .text {
-            position: relative;
-            margin-top: 20px;
-            color: #777;
-            font-weight: 700;
-            font-size: 18px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: 0.5s;
-            -webkit-transition: 0.5s;
-            -moz-transition: 0.5s;
-            -ms-transition: 0.5s;
-            -o-transition: 0.5s;
-        }
-        
-        svg {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            z-index: 1000;
-            transform: rotate(-82deg);
-            -webkit-transform: rotate(-82deg);
-            -moz-transform: rotate(-82deg);
-            -ms-transform: rotate(-82deg);
-            -o-transform: rotate(-82deg);
-        }
-        
-        svg circle {
-            width: 100%;
-            height: 100%;
-            fill: none;
-            stroke: #ffffff;
-            stroke-width: 10;
-            stroke-linecap: round;
-            transform: translate(5px, 5px);
-            -webkit-transform: translate(5px, 5px);
-            -moz-transform: translate(5px, 5px);
-            -ms-transform: translate(5px, 5px);
-            -o-transform: translate(5px, 5px);
-            z-index: 1000;
-        }
-        
-        svg circle:nth-child(2) {
-            stroke-dasharray: 440;
-            stroke-dashoffset: 440;
-        }
-        /* Percentage for Part 1*/
-        
-        .card1:nth-child(1) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 91) / 100);
-            stroke: #00ff43;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 3s ease-out forwards;
-        }
-        
-        .card1:nth-child(2) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 67) / 100);
-            stroke: #00a1ff;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 2s ease-out forwards;
-        }
-        
-        .card1:nth-child(3) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 18) / 100);
-            stroke: magenta;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 5s ease-out forwards;
-        }
-        /* Percentage for Part 2*/
-        
-        .card2:nth-child(1) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 90) / 100);
-            stroke: #00ff43;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 3s ease-out forwards;
-        }
-        
-        .card2:nth-child(2) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 90) / 100);
-            stroke: #ff5e00;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 2s ease-out forwards;
-        }
-        
-        .card2:nth-child(3) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 50) / 100);
-            stroke: #ff04f7;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 5s ease-out forwards;
-        }
-        
-        .card2:nth-child(4) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 80) / 100);
-            stroke: #ffbf00;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 5s ease-out forwards;
-        }
-        /* Percentage for Part 3*/
-        
-        .card3:nth-child(1) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 85) / 100);
-            stroke: #ff003d;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 3s ease-out forwards;
-        }
-        
-        .card3:nth-child(2) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 95) / 100);
-            stroke: #00a1ff;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 2s ease-out forwards;
-        }
-        
-        .card3:nth-child(3) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 95) / 100);
-            stroke: #ff04f7;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 2s ease-out forwards;
-        }
-        /* Percentage for Part 4*/
-        
-        .card4:nth-child(1) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 100) / 100);
-            stroke: #00ff43;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 3s ease-out forwards;
-        }
-        
-        .card4:nth-child(2) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 90) / 100);
-            stroke: #00a1ff;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 2s ease-out forwards;
-        }
-        
-        .card4:nth-child(3) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 75) / 100);
-            stroke: #ff003d;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 5s ease-out forwards;
-        }
-        
-        .card4:nth-child(4) svg circle:nth-child(2) {
-            stroke-dashoffset: calc(440 - (400 * 10) / 100);
-            stroke: #ffbf00;
-            animation: progress 1s ease-out forwards;
-            -webkit-animation: progress 5s ease-out forwards;
-        }
-        
-        .title {
-            margin-top: 100px;
-            margin-bottom: 100px;
-            padding: 10px;
-            height: 100%;
-            text-align: center;
-            justify-content: center;
-        }
-        
-        @keyframes progress {
-            0% {
-                stroke-dasharray: 0 440;
-            }
-        }
+    color: white;
+    background: black;
+    display: flexbox;
+}
+
+.menu .nav-item.current>a {
+    color: #000000;
+}
+
+.title {
+    width: 100%;
+    margin:0;
+    padding: 0%;
+    font-size: 1.5rem;
+}
+
+.okvir {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 88%;
+    top: 6vh;
+    justify-content: space-around;
+    align-items: center;
+    background: #101010;
+    font-family: "Roboto", sans-serif;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.okvir .card {
+    position: relative;
+    display: flex;
+    width: 250px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.card1 {
+    background: linear-gradient(0deg, white, #ff4000, darkred);
+}
+
+.card2 {
+    background: linear-gradient(0deg, white, skyblue, blue);
+}
+
+.card3 {
+    background: linear-gradient(0deg, white, yellow, green);
+}
+
+.card4 {
+    background: linear-gradient(0deg, white, violet, purple);
+}
+
+
+
+.okvir .card::before {
+    
+    content: "";
+    position: relative;
+    width: 95%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.box {
+    position: absolute;
+    z-index: 99;
+}
+
+.percent {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    box-shadow: inset 0 0 50px #000;
+    background: #222;
+    z-index: 1000;
+}
+
+.percent .number {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.percent .number h2 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 40px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.percent .number h2 span {
+    font-size: 24px;
+    color: #777;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.text {
+    position: relative;
+    margin-top: 20px;
+    color: #777;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    z-index: 1000;
+    transform: rotate(-82deg);
+    -webkit-transform: rotate(-82deg);
+    -moz-transform: rotate(-82deg);
+    -ms-transform: rotate(-82deg);
+    -o-transform: rotate(-82deg);
+}
+
+svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    -webkit-transform: translate(5px, 5px);
+    -moz-transform: translate(5px, 5px);
+    -ms-transform: translate(5px, 5px);
+    -o-transform: translate(5px, 5px);
+    z-index: 1000;
+}
+
+svg circle:nth-child(2) {
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+
+
+/* Percentage for Part 1*/
+
+.card1:nth-child(1) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 91) / 100);
+    stroke: #00ff43;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 3s ease-out forwards;
+}
+
+.card1:nth-child(2) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 67) / 100);
+    stroke: #00a1ff;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 2s ease-out forwards;
+}
+
+.card1:nth-child(3) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 18) / 100);
+    stroke: magenta;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 5s ease-out forwards;
+}
+
+
+/* Percentage for Part 2*/
+
+.card2:nth-child(1) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 90) / 100);
+    stroke: #00ff43;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 3s ease-out forwards;
+}
+
+.card2:nth-child(2) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 90) / 100);
+    stroke: #ff5e00;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 2s ease-out forwards;
+}
+
+.card2:nth-child(3) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 50) / 100);
+    stroke: #ff04f7;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 5s ease-out forwards;
+}
+
+.card2:nth-child(4) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 80) / 100);
+    stroke: #ffbf00;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 5s ease-out forwards;
+}
+
+
+/* Percentage for Part 3*/
+
+.card3:nth-child(1) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 85) / 100);
+    stroke: #ff003d;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 3s ease-out forwards;
+}
+
+.card3:nth-child(2) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 35) / 100);
+    stroke: #00a1ff;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 2s ease-out forwards;
+}
+
+.card3:nth-child(3) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 95) / 100);
+    stroke: #ff04f7;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 2s ease-out forwards;
+}
+
+
+/* Percentage for Part 4*/
+
+.card4:nth-child(1) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 100) / 100);
+    stroke: #00ff43;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 3s ease-out forwards;
+}
+
+.card4:nth-child(2) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 90) / 100);
+    stroke: #00a1ff;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 2s ease-out forwards;
+}
+
+.card4:nth-child(3) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 75) / 100);
+    stroke: #ff003d;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 5s ease-out forwards;
+}
+
+.card4:nth-child(4) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (400 * 10) / 100);
+    stroke: #ffbf00;
+    animation: progress 1s ease-out forwards;
+    -webkit-animation: progress 5s ease-out forwards;
+}
+
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 440;
+    }
+}
     </style>
-    <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
@@ -347,7 +341,7 @@
             </a>
                 </li>
                 <li class="nav-item">
-                    <a href="certificate.html" class="nav-link">Certificates And Accomplishments
+                    <a href="certificate.html" class="nav-link">Certificates
             </a>
                 </li>
                 <li class="nav-item current">
@@ -421,15 +415,12 @@
             </div>
 
             <!--End of Section 1  -->
-            <br>
-            <br>
-            <br>
-            <br>
-            <center>
-                <h1 class="skills-text"> Programming Languages</h1>
-            </center>
             <div class=" section ">
-
+                <div class="title">
+                    <center>
+                        <h1>Programming Languages</h1>
+                    </center>
+                </div>
                 <div class=" okvir ">
                     <div class="card2 card ">
                         <div class="box ">
@@ -490,14 +481,12 @@
                 </div>
             </div>
             <!--End of Section 2  -->
-            <br>
-            <br>
-            <br>
-            <br>
-            <center>
-                <h1> D.B.M>S, D.S And Content Writing</h1>
-            </center>
             <div class=" section ">
+                <div class="title">
+                    <center>
+                        <h1>D.B.M.S, D.S and Content Writing</h1>
+                    </center>
+                </div>
                 <div class=" okvir ">
                     <div class="card3 card ">
                         <div class="box ">
@@ -546,15 +535,12 @@
             </div>
 
             <!--End of Section 3  -->
-            <br>
-            <br>
-            <br>
-            <br>
-            <center>
-                <h1> Language Proficiency</h1>
-            </center>
             <div class=" section ">
-
+                <div class="title">
+                    <center>
+                        <h1>Language Proficiency</h1>
+                    </center>
+                </div>
                 <div class=" okvir ">
                     <div class="card4 card ">
                         <div class="box ">
