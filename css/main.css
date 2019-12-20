@@ -328,7 +328,8 @@ i {
 @media screen and (max-width: 768px) {
   main .lg-heading {
     line-height: 1;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    font-size: 10rem; }
   main .sm-heading {
     margin-left: auto;
     margin-right: auto; }
