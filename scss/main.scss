@@ -6,10 +6,7 @@
 }
 
 $title: #24bba0;
-$header: #5371e1;
 $detail: #b2b2b2;
-$highlight: #5371e1;
-$text: #ffffff;
 body {
     background: black;
     letter-spacing: 2px;
@@ -89,7 +86,7 @@ h3 {
     &.sm-heading {
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
-        background: rgba(#dcdcdc, 0.4);
+        margin: auto;
     }
 }
 
