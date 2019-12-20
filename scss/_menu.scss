@@ -44,12 +44,13 @@
     }
     &-branding,
     &-nav {
+        float: none;
         display: flex;
         flex-flow: column wrap;
         align-items: center;
         justify-content: center;
         float: left;
-        width: 60%;
+        width: 50%;
         height: 100vh;
         overflow: hidden;
     }
