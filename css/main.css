@@ -175,7 +175,8 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(220, 220, 220, 0.4); }
+    background: rgba(220, 220, 220, 0.4);
+    margin: auto; }
 
 a {
   color: #fff;
@@ -359,9 +360,12 @@ i {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh;
-    font-size: 2rem;
-    text-align: left; }
+  main {
+    padding: 2rem; }
+    main #home h1 {
+      margin-top: 10vh; }
+    main .lg-heading {
+      margin-top: 1rem;
+      font-size: 5rem; }
   .projects {
     grid-template-columns: 1fr; } }
