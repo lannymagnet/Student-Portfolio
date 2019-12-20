@@ -35,7 +35,7 @@
     align-items: center;
     justify-content: center;
     float: left;
-    width: 50%;
+    width: 60%;
     height: 100vh;
     overflow: hidden; }
   .menu-nav {
@@ -340,7 +340,6 @@ i {
       margin-bottom: 1rem; }
   ul.menu-nav,
   div.menu-branding {
-    float: none;
     width: 100%;
     min-height: 0; }
     ul.menu-nav.show,
