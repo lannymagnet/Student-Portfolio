@@ -175,7 +175,6 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    text-align: center;
     background: rgba(220, 220, 220, 0.4); }
 
 a {
@@ -327,15 +326,12 @@ i {
     grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-    main .sm-heading {
-      margin-left: auto;
-      margin-right: auto; }
+  main .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem; }
+  main .sm-heading {
+    margin-left: auto;
+    margin-right: auto; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -364,9 +360,7 @@ i {
 @media screen and (max-width: 500px) {
   main#home h1 {
     margin-top: 10vh;
-    align-items: center;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto; }
+    font-size: 2rem;
+    text-align: left; }
   .projects {
     grid-template-columns: 1fr; } }
