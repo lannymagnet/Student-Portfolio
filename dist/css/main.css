@@ -326,15 +326,13 @@ i {
     grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-    main .sm-heading {
-      margin-left: auto;
-      margin-right: auto; }
+  main .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-size: 10rem; }
+  main .sm-heading {
+    margin-left: auto;
+    margin-right: auto; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -363,6 +361,7 @@ i {
 @media screen and (max-width: 500px) {
   main#home h1 {
     margin-top: 10vh;
-    font-size: 2rem; }
+    font-size: 2rem;
+    text-align: left; }
   .projects {
     grid-template-columns: 1fr; } }

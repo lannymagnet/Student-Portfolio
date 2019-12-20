@@ -15,11 +15,10 @@
 //Tablets and Small Laptops
 @include mediaMd {
     main {
-        align-items: center;
-        text-align: center;
         .lg-heading {
             line-height: 1;
             margin-bottom: 1rem;
+            font-size: 10rem;
         }
         .sm-heading {
             margin-left: auto;
@@ -63,7 +62,9 @@
     main#home h1 {
         margin-top: 10vh;
         font-size: 2rem;
+        text-align: left;
     }
+    .text-secondary {}
     .projects {
         grid-template-columns: 1fr;
     }
